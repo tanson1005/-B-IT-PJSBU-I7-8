@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="form-container">
+            <h1 class="header text-center mt-5">---BÀI TẬP JS BUỔI 7 - 8---</h1>
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <label for="numbers" class="form-label">Nhập Số (Cách nhau bằng dấu phẩy)</label>
+                    <input type="text" class="form-control" id="numbers" required>
+                </div>
+                <div class="col-md-8">
+                    <label for="numbers2" class="form-label">Nhập một mảng khác (Cách nhau bằng dấu phẩy)</label>
+                    <input type="text" class="form-control" id="numbers2" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-8">
+                    <label for="function" class="form-label">Chọn chức năng</label>
+                    <select class="form-select" id="function" required>
+                        <option value="sum">Tổng các số dương</option>
+                        <option value="count">Đếm số dương</option>
+                        <option value="smallest">Số nhỏ nhất</option>
+                        <option value="smallestPositive">Số dương nhỏ nhất</option>
+                        <option value="lastEven">Số chẵn cuối cùng</option>
+                        <option value="swap">Hoán đổi giá trị</option>
+                        <option value="sort">Sắp xếp mảng</option>
+                        <option value="firstPrime">Số nguyên tố đầu tiên</option>
+                        <option value="countIntegers">Đếm số nguyên</option>
+                        <option value="comparePosNeg">So sánh số dương và số âm</option>
+                    </select>
+                </div>
+                <div class="col-md-4" id="swapInputs" style="display: none;">
+                    <label for="positions" class="form-label">Nhập hai vị trí</label>
+                    <input type="text" class="form-control" id="positions" required>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" id="btn-tt">Tính toán</button>
+                </div>
+            </div>
+            <div class="row mt-3 alert alert-warning">
+                <div class="col-md-4">
+                    <h4 class="">Kết Quả:</h4>
+                    <div id="result"></div>
+                </div>
+            </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/js7-8.js"></script>
+</body>
+</html>
