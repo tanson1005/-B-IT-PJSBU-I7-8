@@ -44,10 +44,10 @@ function calculate() {
             result = countIntegers(numbers2);
             break;
         case 'comparePosNeg':
-            result = comparePositiveNegative(numbers, numbers2);
+            result = comparePositiveNegative(numbers);
             break;
         default:
-            result = 'Invalid Function';
+            result = 'Hàm không hợp lệ';
     }
     document.getElementById('result').innerHTML = result;
 }
@@ -135,19 +135,41 @@ function countIntegers(numbers2) {
     return count;
 }
 
-function comparePositiveNegative(numbers, numbers2) {
-    const positiveCount = countPositive(numbers);
-    const negativeCount = countPositive(numbers2);
+// function comparePositiveNegative(numbers, numbers2) {
+//     const positiveCount = countPositive(numbers);
+//     const negativeCount = countPositive(numbers2);
+//     if (positiveCount > negativeCount) {
+//         return 'Số Dương lớn hơn';
+//     } else if (positiveCount < negativeCount) {
+//         return 'Số Âm lớn hơn';
+//     } 
+//     else {
+//         return 'Cả hai bằng nhau';
+//     }
+// }
+function comparePositiveNegative(numbers) {
+    let positiveCount = 0;
+    let negativeCount = 0;
+
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] > 0) {
+            positiveCount++;
+        } else if (numbers[i] < 0) {
+            negativeCount++;
+        }
+    }
+
     if (positiveCount > negativeCount) {
+        document.getElementById('result').innerHTML = 'Số Dương lớn hơn';
         return 'Số Dương lớn hơn';
     } else if (positiveCount < negativeCount) {
-        return 'Số Âm lớn hơn';
-    } 
-    else if (positiveCount === negativeCount) {
-        return 'Cả hai bằng nhau';
+        document.getElementById('result').innerHTML = 'Số Âm lớn hơn';
+        return  'Số Âm lớn hơn';
+    } else {
+        document.getElementById('result').innerHTML = 'Số Dương và số Âm bằng nhau';
+        return  'Số Dương và số Âm bằng nhau';
     }
 }
-
 function isPrime(num) {
     for (let i = 2, sqrt = Math.sqrt(num); i <= sqrt; i++) {
         if (num % i === 0) {
